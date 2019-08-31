@@ -19,4 +19,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#film-list {
+  background-color: white;
+  border: solid 3px gold;
+  margin-right: 1em;
+  overflow-y: scroll;
+  height: 500px;
+  opacity: 0.9;
+}
 </style>

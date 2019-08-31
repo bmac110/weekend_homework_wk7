@@ -1,7 +1,8 @@
 <template lang="html">
-  <div id="ghibli-view">
+  <div class="ghibli-view">
     <film-list :films="films"></film-list>
     <film-info v-if="selectedFilm" :film="selectedFilm"></film-info>
+    <img src="../../public/ghibli_background.jpg" alt="bckgound" class="bg" />
   </div>
 </template>
 
@@ -28,4 +29,25 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.ghibli-view {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img.bg {
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1
+}
+
+@media screen and (max-width: 1024px){
+    img.bg {
+    left: 50%;
+    margin-left: -512px; }
+}
 </style>

@@ -19,4 +19,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  p {
+    cursor: pointer;
+  }
 </style>
