@@ -1,14 +1,29 @@
 <template>
   <div id="app">
-    
+    <ghibli-navbar/>
+    <router-view :films="films" id="view"/>
   </div>
 </template>
 
 <script>
-
+import GhibliNavBar from '@/components/GhibliNavBar'
 
 export default {
-
+  name: 'app',
+  components: {
+    'ghibli-navbar': GhibliNavBar
+  },
+  data(){
+    return {
+      films: []
+    }
+  },
+  mounted(){
+    fetch('https://ghibliapi.herokuapp.com/films')
+    .then(res => res.json())
+    .then(films => this.films = films)
+  }
+}
 </script>
 
 <style>
