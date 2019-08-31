@@ -13,11 +13,16 @@ import FilmInfo from '@/components/FilmInfo'
 export default {
   props: ['films'],
   data(){
-    
-  }
+    return{
+      selectedFilm: null
+    }
+  },
   components: {
     "film-list": FilmList,
     "film-info": FilmInfo
+  },
+  mounted(){
+    eventBus.$on('film-selected', film => this.selectedFilm = film)
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="filmlistitem">
-    <p>{{film.title}}</p>
+    <p v-on:click='displayInfo'>{{film.title}}</p>
   </div>
 </template>
 
@@ -9,8 +9,12 @@ import {eventBus} from '@/main.js'
 
 export default {
   name: 'film-list-item',
-  props: ['film']
-
+  props: ['film'],
+  methods: {
+    displayInfo: function(){
+      eventBus.$emit('film-selected', this.film)
+    }
+  }
 }
 </script>
 
