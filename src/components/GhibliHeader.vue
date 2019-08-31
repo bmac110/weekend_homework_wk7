@@ -7,3 +7,4 @@ export default {
   name: 'ghibli-header',
   props: ['title']
 }
+</script>

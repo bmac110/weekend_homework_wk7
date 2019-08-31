@@ -3,8 +3,9 @@
     <ghibli-header :title="film.title"/>
     <div id="film-info">
       <div id="film-text">
+        <h3>Description</h3>
         <p>{{film.description}}</p>
-        <p>{{film.director}}</p>
+        <p>Director: {{film.director}}</p>
       </div>
 
     </div>
