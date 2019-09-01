@@ -7,8 +7,8 @@
         <p>{{film.description}}</p>
         <span>Director: </span>
         <span>{{film.director}}</span>
-        <br />
-        <h3 v-on:click="addFavourite">Add to Favourites</h3>
+        
+
 
       </div>
 

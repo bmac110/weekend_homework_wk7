@@ -10,7 +10,7 @@
 import FilmListItem from '@/components/FilmListItem'
 
 export default {
-  name: 'film-list',
+  // name: 'film-list',
   props: ['films'],
   components: {
     'film-list-item': FilmListItem

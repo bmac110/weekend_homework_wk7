@@ -2,27 +2,44 @@
   <div id="app">
     <h1>Studio Ghibli</h1>
     <ghibli-navbar/>
-    <router-view :films="films" id="view"/>
+    <router-view :films="films" :favourites="favourites" id="view"/>
   </div>
 </template>
 
 <script>
+import {eventBus} from '@/main.js'
 import GhibliNavBar from '@/components/GhibliNavBar'
+import FilmInfo from '@/components/FilmInfo'
 
 export default {
   name: 'app',
   components: {
-    'ghibli-navbar': GhibliNavBar
+    'ghibli-navbar': GhibliNavBar,
+    'fav-film': FilmInfo
+
   },
   data(){
     return {
+      favourites: [],
+      // selectedFilm: null,
       films: []
     }
   },
+  // computed: {
+  //   favourites: function(){
+  //     return this.films.filter(film => film.isFavourite)
+  //   }
+  // },
   mounted(){
     fetch('https://ghibliapi.herokuapp.com/films')
     .then(res => res.json())
-    .then(films => this.films = films)
+    .then(data => this.films = data)
+
+    eventBus.$on('fav-selected', film => this.favourites.push(film))
+
+    // eventBus.$on('film-selected', (film) => {
+    //   this.selectedFilm = film;
+    // })
   }
 }
 </script>
