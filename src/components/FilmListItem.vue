@@ -19,6 +19,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#filmlistitem:hover {
+  background-color: gold;
+}
+
+
   p {
     cursor: pointer;
   }

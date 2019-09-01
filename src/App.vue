@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Studio Ghibli</h1>
-    <ghibli-navbar/>
+    <ghibli-navbar id="navbar"/>
     <router-view :films="films" :favourites="favourites" id="view"/>
   </div>
 </template>
@@ -21,7 +21,6 @@ export default {
   data(){
     return {
       favourites: [],
-      // selectedFilm: null,
       films: []
     }
   },
@@ -51,6 +50,22 @@ h1 {
   background-color: rgba(0, 0, 0, .3)
 }
 
+a {
+  display: inline-block;
+  margin-right: 1em;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gold;
+}
+
+#navbar {
+  font-size: 2em;
+  color: white;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -58,5 +73,6 @@ h1 {
   text-align: left;
   color: #2c3e50;
   margin-top: 60px;
+  font-weight: bold;
 }
 </style>

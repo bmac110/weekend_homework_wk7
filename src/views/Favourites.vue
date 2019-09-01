@@ -4,8 +4,6 @@
     <div class="favs">
       <fav-list :films="favourites"></fav-list>
       <fav-film-info v-if="selectedFilm" :film="selectedFilm"></fav-film-info>
-      <!-- <film-info v-if="selectedFilm" :film="selectedFilm"></film-info> -->
-      <!-- <fav-list v-for="(film, index) of this.favourites" :film="film" :key="index" /> -->
     </div>
   </div>
 </template>

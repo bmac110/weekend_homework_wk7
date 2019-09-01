@@ -39,7 +39,17 @@ export default {
 }
 </script>
 
+
 <style lang="css" scoped>
+
+h3 {
+  cursor: pointer;
+}
+
+h3:hover {
+  color: gold;
+}
+
   #film-info-container {
     width: 30%;
     background-color: white;
